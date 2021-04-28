@@ -1,20 +1,30 @@
 package oop.inheritance.ingenico;
+import oop.inheritance.core.TVPDisplay;
 
-public class IngenicoDisplay {
+public class IngenicoDisplay implements TVPDisplay{
+    //eager private static IngenicoDisplay uniqueInstance = new IngenicoDisplay();
 
-    /**
-     * Prints a message to specied position
-     *
-     * @param x       horizontal position
-     * @param y       vertical position
-     * @param message message to be printed
-     */
-    public void showMessage(int x, int y, String message) {
+    //Lazy initialization
+    private static IngenicoDisplay uniqueInstance;
+    private boolean lightTurnedOn;
+
+    private IngenicoDisplay(){
+
     }
 
-    /**
-     * Clears the screen
-     */
+    public static IngenicoDisplay getInstance(){
+        //synchronized (IngenicoDisplay.class){
+            if(uniqueInstance == null){
+                uniqueInstance= new IngenicoDisplay();
+            }
+        //}
+        return uniqueInstance;
+    }
+
+    public void showMessage(int x, int y, String message) {
+
+    }
+
     public void clear() {
 
     }

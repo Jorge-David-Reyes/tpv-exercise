@@ -1,5 +1,4 @@
 package oop.inheritance;
-
 import oop.inheritance.data.SupportedTerminal;
 
 public class Main {
@@ -29,5 +28,4 @@ public class Main {
             }
         }
     }
-
 }
